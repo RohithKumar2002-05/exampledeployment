@@ -1,22 +1,22 @@
 import React from 'react';
 import prisma from '../../lib/prisma'
-
+import Link from 'next/link';
 export default async function Home() {
 
 const posts = await prisma.post.findMany({})
   return (
-    <div className="flex items-center justify-center">
+    <div>
 
       {posts.length >0 ?(
         
         posts.map((post)=>
          
           (
-          <div key={post.id} className='border-b max-w flex-col items-center'>
+          <div key={post.id} className='p-10'>
         
-
-           <div >{post.title}</div>
-           <div className=''>{post.content}</div>
+        <Link href={`/`} ></Link>    <div className='flex gap-10 '>   <div >{post.title}</div>
+            <div className=''>{post.content}</div></div>
+        
    
         
 
