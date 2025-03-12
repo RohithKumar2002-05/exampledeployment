@@ -12,11 +12,13 @@ const posts = await prisma.post.findMany({})
         posts.map((post)=>
          
           (
-          <div key={post.id} className='border-b max-w flex items-center'>
-              <Link href={`/${post.id}`} className='text-blue'>        <p>{post.title}</p></Link>
-           
-            <p>{post.content}</p>
-          
+          <div key={post.id} className='border-b max-w flex-col items-center'>
+        
+
+           <div >{post.title}</div>
+           <div className=''>{post.content}</div>
+   
+        
 
 
           </div>
